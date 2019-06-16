@@ -54,3 +54,6 @@ width:40px;
     border-radius: 50%;
     cursor:pointer;
 }
+.key:hover {
+    background-color: blue;
+}
