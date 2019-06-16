@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    let examplePassword = "Przykladowe Haslo";
+    let examplePassword = "Haslo haslo";
     let password = "";
     let passwordLength = examplePassword.length;
     let letters = ["A", "B", "C", "D", "E", 'F', "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
@@ -47,30 +47,42 @@ document.addEventListener("DOMContentLoaded", function () {
         else return this.substr(0,position)+chart+this.substr(position+1)
     }
 
-
+    let imgPosition=0;
 const checkIfClick=()=> {
-        let succes=false;
     let keys = document.querySelectorAll(".key");
     for (let i = 0; i < keys.length; i++) {
-        keys[i].addEventListener("click", function () {
-           for(let j=0;j<passwordLength;j++){
-            if(examplePassword.charAt(j)===keys[i].innerHTML){
-                alert(j);
-               password=password.setChart(j,keys[i].innerHTML);
-               succes=true;
-                document.querySelector(".container header").innerHTML = password
+        keys[i].addEventListener("click",  function () {
+            for(let j=0;j<passwordLength;j++) {
+                if (examplePassword.charAt(j) === keys[i].innerHTML) {
+                    this.classList.add("succes");
+                    password = password.setChart(j, keys[i].innerHTML);
+                    document.querySelector(".container header").innerHTML = password;
+                }
 
             }
-           }
-           if(succes==true) {
 
+                if(!this.classList.contains("succes")) {
+                    this.classList.add("fail");
+                    this.removeEventListener("click",function () {
+                        ""
+                    })
+                    failCounter++;
+                    imgPosition=imgPosition+400;
+               document.querySelector("figure").style.backgroundPosition=`15px ${-20-imgPosition}px`;
+                console.log(failCounter);
+                    console.log(imgPosition);
+                }
+            if(examplePassword==password){
+                document.querySelector(".container article").innerHTML = "YOU WIN !!";
+            }
+            if(failCounter==7){
+                document.querySelector(".container article").innerHTML = "TRY AGAIN!!";
+            }
 
-           }
-           else{
-
-           }
         })
     }
+
+
 
 };
     createKeyboard();
