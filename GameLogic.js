@@ -1,9 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
 
     let examplePassword = "Przykladowe Haslo";
-    let password = ""
+    let password = "";
     let passwordLength = examplePassword.length;
     let letters = ["A", "B", "C", "D", "E", 'F', "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+    let failCounter=0;
     const stringToPassword = () => {
 
 
@@ -19,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const createPassword = () => {
         stringToPassword();
         examplePassword = examplePassword.toUpperCase();
-        document.querySelector(".container header").innerText = password
+        document.querySelector(".container header").innerHTML = password
 
     };
 
@@ -30,27 +31,52 @@ document.addEventListener("DOMContentLoaded", function () {
             let singleKey="key"+i;
             keyboard = keyboard + `<div class="key" id="${singleKey}" >${letters[i]}</div>`
 
-            if (i % 6 == 0) {
+            if (i % 7 == 0) {
                 keyboard = keyboard + '<br/>'
             }
-        }
 
+        }
         document.querySelector(".container article").innerHTML = keyboard;
 
     };
-const checkIfClick=(nr)=> {
+
+    String.prototype.setChart=function (position,chart) {
+        if(position>this.length-1){
+            return this.toString();
+        }
+        else return this.substr(0,position)+chart+this.substr(position+1)
+    }
+
+
+const checkIfClick=()=> {
+        let succes=false;
     let keys = document.querySelectorAll(".key");
     for (let i = 0; i < keys.length; i++) {
         keys[i].addEventListener("click", function () {
            for(let j=0;j<passwordLength;j++){
-            if(examplePassword.charAt(j)===keys[i].innerText){
-                alert(j)
+            if(examplePassword.charAt(j)===keys[i].innerHTML){
+                alert(j);
+               password=password.setChart(j,keys[i].innerHTML);
+               succes=true;
+                document.querySelector(".container header").innerHTML = password
+
             }
+           }
+           if(succes==true) {
+
+
+           }
+           else{
+
            }
         })
     }
+
 };
-        createPassword();
     createKeyboard();
+    createPassword();
     checkIfClick();
+
+
+
 });

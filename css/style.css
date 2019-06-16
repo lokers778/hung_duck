@@ -5,7 +5,7 @@
 }
 body{
     background-color: aqua;
-
+    font-family: 'Roboto Mono', monospace;
 }
 .container{
     width: 80vw;
@@ -21,6 +21,7 @@ header{
     font-size:40px;
     margin:5% auto;
     min-height:60px;
+    font-weight: 700;
 }
 section{
     display: flex;
