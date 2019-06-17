@@ -35,6 +35,8 @@ figure{
     min-height:400px;
    background-image:url("../img/duck sprite (2).png") ;
     background-position: 0px -20px;
+    background-repeat: no-repeat;
+    margin-left:80px;
 }
 article{
     horiz-align: center;
