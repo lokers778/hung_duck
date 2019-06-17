@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let examplePassword = "Haslo haslo";
     let password = "";
     let passwordLength = examplePassword.length;
-    let letters = ["A", "B", "C", "D", "E", 'F', "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+    let letters = ["A", "B", "C", "D", "E", 'F', "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
     let failCounter=0;
     const stringToPassword = () => {
 
@@ -82,7 +82,10 @@ const checkIfClick=()=> {
         })
     }
 
+const gameLogic=()=>{
 
+
+}
 
 };
     createKeyboard();
