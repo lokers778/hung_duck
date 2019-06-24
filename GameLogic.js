@@ -82,15 +82,23 @@ const checkIfClick=()=> {
         })
     }
 
-const gameLogic=()=>{
+const duckSound=()=>{
+let duck= document.querySelector("body > div.background > div.rubberDuck");
+duck.addEventListener("click",()=> {
+    let audio = document.getElementById("myAudio");
+    audio.play();
+
+})
 
 
 }
-
+    duckSound();
 };
+
     createKeyboard();
     createPassword();
     checkIfClick();
+
 
 
 

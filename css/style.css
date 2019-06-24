@@ -283,6 +283,9 @@ width:50px;
     animation-iteration-count:infinite;
     animation-timing-function: linear;
 }
+.rubberDuck:hover{
+    cursor:pointer;
+}
 @keyframes moveDuck {
     0%{right: -25%}
 
