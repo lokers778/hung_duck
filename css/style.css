@@ -71,11 +71,12 @@ width:50px;
 
 /*added duckground ...DUCKground .. funny " */
 .header{
-    background-color: #75D2F7;
+    background-color: #52524d;
     height: 200px;
     display: flex;
 }
 .nav{
+    color:#f69a10;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -86,7 +87,7 @@ width:50px;
 
 .duck{
     width: 300px;
-    background-color: #75D2F7;
+    background-color: #52524d;
     height: 100%;
     display: flex;
     justify-content: center;
